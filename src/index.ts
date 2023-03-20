@@ -1,7 +1,7 @@
-(async () => {
-  // Run your code here
-  console.log('Hello, world!');
-})();
+import { getDocuments, getSlugs } from '@/lib/get-documents';
 
-// The empty export is required to prevent TypeScript from compiling this file as a module. You can remove this line once you import something
-export {};
+(async () => {
+  const slugs = await getSlugs();
+  const documents = await getDocuments(slugs);
+  console.log(documents);
+})();
